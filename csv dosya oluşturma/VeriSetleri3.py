@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
 # Veri setini yükle
-data = pd.read_csv('test_tweets.csv', header=None)
+data = pd.read_csv('veri_seti_yeni_adlar.csv', header=None)
 
 # Sütun adlarını belirle
 data.columns = ["Turkcell'e kızgınım. Ve bu kızgınlık sanırım ayrılıkla sonlanıcak gibi geliyor bana.Farklı bir operatörün %30'u fazla fiyat teklif ediyorlar", "olumsuz"]
