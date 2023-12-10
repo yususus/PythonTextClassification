@@ -1,4 +1,3 @@
-# Gerekli modülleri içe aktar
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from gensim.models import Word2Vec
@@ -6,12 +5,14 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 
-# Veri setini yükle
-data = pd.read_csv('test_tweets.csv')
+# CSV dosyasını oku
+data = pd.read_csv('veri_seti_yeni_adlar.csv')
+
+# İlgili sütunu seç
+X = data['yorum']  # 'sutun_adi' yerine veri setinizdeki ilgili sütunun adını yazın
 
 # Özellikler ve hedef değişkeni belirle
-X = data["Turkcell'e kızgınım. Ve bu kızgınlık sanırım ayrılıkla sonlanıcak gibi geliyor bana.Farklı bir operatörün %30'u fazla fiyat teklif ediyorlar"]
-y = data["olumsuz"]
+y = data["duygu"]
 
 # Veriyi eğitim ve test setlerine ayır
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)

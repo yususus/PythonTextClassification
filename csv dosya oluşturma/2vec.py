@@ -1,14 +1,14 @@
+# Gerekli kütüphaneleri içe aktarma
 import pandas as pd
 from gensim.models import Word2Vec
 
-# CSV dosyasını oku
-df = pd.read_csv('tokenleştirilmis.csv')  # 'dosya_yolu.csv' yerine CSV dosyanızın yolunu yazın
+# CSV dosyasını okuma
+df = pd.read_csv('tokenleştirilmis2.csv')
 
-# Her iki sütunu birleştir
-sentences = df['Yorumlar'].tolist() + df['Duygular'].tolist()  # 'sütun1' ve 'sütun2' yerine tokenlerin bulunduğu sütunların isimlerini yazın
+# Metin verilerini temizleme ve önişleme (bu adımı verilerinize göre özelleştirebilirsiniz)
 
-# Word2Vec modelini eğit
+# Word2Vec modelini eğitme
+sentences = df['Yorumlar'].tolist()
 model = Word2Vec(sentences, vector_size=100, window=5, min_count=1, workers=4)
 
-# Bir kelimenin vektörünü al
-vector = model.wv["olumsuz"]  # 'kelime' yerine vektörünü almak istediğiniz kelimeyi yazın
+model.save("model.bin")
