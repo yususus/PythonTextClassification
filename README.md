@@ -32,7 +32,6 @@ def get_data(urls):
             # Verileri CSV dosyasına kaydet
             for yorum in yorumlar:
                 writer.writerow([haber, yorum])
-
 //url adresleri
 if __name__ == '__main__':
     urls = [
@@ -43,11 +42,11 @@ if __name__ == '__main__':
         "https://www.haberler.com/haberler/cumhurbaskani-erdogan-6-yil-sonra-atina-da-16604464-haberi-yorumlari/",
         "https://www.haberler.com/magazin/kismetse-olur-yarismacisi-simge-nur-erkoc-16619544-haberi/",
         "https://www.haberler.com/haberler/okuldan-kovulan-ogretmen-uslanmiyor-simdide-16619909-haberi/",
-        "https://www.haberler.com/yasam/bodrum-da-derisi-yuzulmus-tilki-bulundu-16621788-haberi/",
-        "https://www.haberler.com/politika/tbmm-de-bayilan-sp-milletvekili-hasan-bitmez-in-16621521-haberi/",
-        "https://www.haberler.com/spor/hakem-halil-umut-meler-e-yumruklu-saldirida-16619169-haberi/",
-        "https://www.haberler.com/haberler/istanbul-da-devrim-gibi-karar-bu-3-ilceye-ozel-16623264-haberi/"
-    ]
+"https://www.haberler.com/yasam/bodrum-da-derisi-yuzulmus-tilki-bulundu-16621788-haberi/",
+"https://www.haberler.com/politika/tbmm-de-bayilan-sp-milletvekili-hasan-bitmez-in-16621521-haberi/",
+"https://www.haberler.com/spor/hakem-halil-umut-meler-e-yumruklu-saldirida-16619169-haberi/",
+"https://www.haberler.com/haberler/istanbul-da-devrim-gibi-karar-bu-3-ilceye-ozel-16623264-haberi/"
+]
     get_data(urls)
 
 
