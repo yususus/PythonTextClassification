@@ -3,10 +3,11 @@ from sklearn.naive_bayes import MultinomialNB
 import pandas as pd
 from sklearn.metrics import accuracy_score
 
+
 # Eğitim verilerini yükle
-df_train = pd.read_csv('tokenleştirilmis3.csv')
-X_train = df_train['Yorumlar'].values
-y_train = df_train['Duygular'].values
+df_train = pd.read_csv('test_yeni.csv')
+X_train = df_train['yorum'].values
+y_train = df_train['duygu'].values
 
 # Metin sınıflandırma modelini oluştur
 vectorizer = CountVectorizer()
@@ -14,7 +15,7 @@ X_train_vec = vectorizer.fit_transform(X_train)
 clf = MultinomialNB()
 clf.fit(X_train_vec, y_train)
 
-df_new = pd.read_csv('Toplu.csv')  # Yeni veri setini yükle
+df_new = pd.read_csv('Toplu9.csv')  # Yeni veri setini yükle
 
 # NaN değerleri temizle
 df_new = df_new.dropna(subset=['Yorum'])

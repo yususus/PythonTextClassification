@@ -1,24 +1,22 @@
 import pandas as pd
 from nltk.tokenize import word_tokenize
 
-# CSV dosyasını oku
-df = pd.read_csv('veri_seti_yeni_adlar.csv')
+# hangi dosyası tokenleştirmek istiyorsak onu "Toplu.csv" yazan yere yazıyoruz
+df = pd.read_csv('Toplu.csv')
 
-# 'yorum' ve 'duygu' sütunlarının var olduğunu kontrol et
-assert 'yorum' in df.columns, "'yorum' sütunu veri çerçevesinde bulunamadı."
-assert 'duygu' in df.columns, "'duygu' sütunu veri çerçevesinde bulunamadı."
+# 'yorum' ve 'duygu' sütunları var mı diye bakıyoruz
+assert 'Haber' in df.columns, "'Haber' sütunu bulunmadı"
+assert 'Yorum' in df.columns, "'Yorum' sütunu bulunmadı"
 
 # 'yorum' ve 'duygu' sütunlarını tokenleştir
-df['Yorumlar'] = df['yorum'].apply(word_tokenize)
-df['Duygular'] = df['duygu'].apply(word_tokenize)
+df['Haber'] = df['Haber'].apply(word_tokenize)
+df['Yorum'] = df['Yorum'].apply(word_tokenize)
 
 # 'yorum' ve 'duygu' sütunlarını çıkar
-df = df.drop(['yorum', 'duygu'], axis=1)
+df = df.drop(['Haber', 'Yorum'], axis=1)
 
 # NaN değerleri temizle
 df = df.dropna()
 
-print(df[['Yorumlar', 'Duygular']])
+df.to_csv('Toplu_token.csv', index=False)
 
-# Tokenleştirilmiş verileri 'tokenleştirilmis2.csv' adlı ayrı bir CSV dosyasına kaydet
-df.to_csv('tokenleştirilmis3.csv', index=False)
