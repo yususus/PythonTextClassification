@@ -4,12 +4,13 @@ VERİ ÇEKME CSV DOSYA ÇEVİRME İŞLEMİ
 Veri çekme işlemleri Haberler.com adresinden belirli html tagleri kullanılarak çekilmiştir çünkü herhangi bir api hizmeti sunan web sitesi bulunmamaktadır. Kodlar python yazılım dili kullanarak yazılmıştır.
 Kodlarımda haber içeriğini yapılan her yorum çekiyorum.
 
+
+
+# Haber ve Yorum çekme işlemi
 import requests
 from bs4 import BeautifulSoup
 import csv
 import itertools
-
-# URL'lerden veri çekme
 def get_data(urls):
     with open('HaberYorum.csv', 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -32,7 +33,7 @@ def get_data(urls):
             for yorum in yorumlar:
                 writer.writerow([haber, yorum])
 
-#url adresleri
+//url adresleri
 if __name__ == '__main__':
     urls = [
         "https://www.haberler.com/haberler/marmara-daki-deprem-oncesi-telefonlara-gelen-16593257-haberi/",
@@ -141,12 +142,13 @@ Kodların çıktısı ise şu şekilde:
 
 
 
+
+
+# Haber Kategorizasyonu
 Bu işlemleri haber kategorizasyonu içinde tekrar yaptım ancak haber veri setim olmadığı için haber veri setini kendim oluşturmam gerekti. Bunun için yaklaşık 500’e yakın haber verisi çektim bu işlemi yaptığım kodlar ise şu şekilde:
 import requests
 from bs4 import BeautifulSoup
 import csv
-
-# Farklı url'lerden veri çekiyorum
 urls = [
     "https://www.haberler.com/egitim/",
     "https://www.haberler.com/ekonomi/",
@@ -178,7 +180,7 @@ with open('Haber2.csv', 'w', newline='', encoding='utf-8') as f:
         url_parts = url.split('/')
         unique_name = url_parts[-2]  
 
-        # Bunları sütun ve satır haline getirdim
+        // Bunları sütun ve satır haline getirdim
         for i in range(max(len(data_class1), len(data_class2))):
             row_class1 = data_class1[i] if i < len(data_class1) else ''
             row_class2 = data_class2[i] if i < len(data_class2) else ''
@@ -203,7 +205,7 @@ import pandas as pd
 import numpy as np
 
 model = Word2Vec.load("modelHaber.bin")
-# Metin verilerini sayısallaştır
+// Metin verilerini sayısallaştır
 def vectorize_text(text):
     words = text.split()
     word_vecs = [model.wv[word] for word in words if word in model.wv.key_to_index]
@@ -228,7 +230,7 @@ X_new_vec = np.array([vectorize_text(text) for text in X_new])
 y_pred = clf.predict(X_new_vec)
 y_true = df_new['Yorum'].values  
 
-# Tahmin sonuçlarını göster
+// Tahmin sonuçlarını göster
 for comment, pred in zip(X_new, y_pred):
     print(f"Yorum: {comment} \nTahmin: {pred}\n")
 
