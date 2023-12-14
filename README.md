@@ -50,7 +50,7 @@ if __name__ == '__main__':
         "https://www.haberler.com/haberler/istanbul-da-devrim-gibi-karar-bu-3-ilceye-ozel-16623264-haberi/"
 ]
     get_data(urls)
-
+```python
 
 
 
@@ -94,7 +94,7 @@ y_true = df_new['Yorum'].values
 
 for comment, pred in zip(X_new, y_pred):
     print(f"Yorum: {comment} \nTahmin: {pred}\n")
-
+```python
 
 
 Kodların çıktısı ise şu şekilde:
@@ -153,7 +153,7 @@ with open('Haber2.csv', 'w', newline='', encoding='utf-8') as f:
             row_class1 = data_class1[i] if i < len(data_class1) else ''
             row_class2 = data_class2[i] if i < len(data_class2) else ''
             writer.writerow([f'{unique_name}_Haber: {row_class1}', row_class2])
-
+```python
 
 
 
@@ -206,7 +206,7 @@ y_true = df_new['Yorum'].values
 // Show prediction results
 for comment, pred in zip(X_new, y_pred):
     print(f"Yorum: {comment} \nTahmin: {pred}\n")
-
+```python
 
 Haberleri kategorize ettirdiğim zaman çıktılar bu şekilde olmakta.
 When I categorize the news, the outputs are like this.
