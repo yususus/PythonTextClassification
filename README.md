@@ -8,7 +8,8 @@ In my codes, I pull the news content and every comment made.
 
 
 # News and Comment
-'''import requests
+```python
+import requests
 from bs4 import BeautifulSoup
 import csv
 import itertools
@@ -50,7 +51,7 @@ if __name__ == '__main__':
 ]
     get_data(urls)
 
-'''
+
 
 
 
@@ -59,7 +60,7 @@ if __name__ == '__main__':
 Yorumları değerlendirdiğim kodlar şu şekilde:
 The codes I used to evaluate the comments are as follows:
 
-'''
+```python
 from sklearn.linear_model import SGDClassifier
 from gensim.models import Word2Vec
 import pandas as pd
@@ -93,7 +94,7 @@ y_true = df_new['Yorum'].values
 
 for comment, pred in zip(X_new, y_pred):
     print(f"Yorum: {comment} \nTahmin: {pred}\n")
-'''
+
 
 
 Kodların çıktısı ise şu şekilde:
@@ -111,7 +112,7 @@ When I run, the outputs are like this.
 500'e yakın haber çekme işlemi gerçekşetirdim. Bu veriler verim setim olacak.
 I pulled nearly 500 news stories from the internet and completed the process. These data will be my dataset.
 
-'''
+```python
 import requests
 from bs4 import BeautifulSoup
 import csv
@@ -152,7 +153,7 @@ with open('Haber2.csv', 'w', newline='', encoding='utf-8') as f:
             row_class1 = data_class1[i] if i < len(data_class1) else ''
             row_class2 = data_class2[i] if i < len(data_class2) else ''
             writer.writerow([f'{unique_name}_Haber: {row_class1}', row_class2])
-'''
+
 
 
 
@@ -168,7 +169,7 @@ with open('Haber2.csv', 'w', newline='', encoding='utf-8') as f:
 Kategorileri belirlediğim kodlarım şu şekilde:
 My codes where I determined the categories are as follows:
 
-'''
+```python
 from sklearn.linear_model import SGDClassifier
 from gensim.models import Word2Vec
 import pandas as pd
@@ -205,7 +206,7 @@ y_true = df_new['Yorum'].values
 // Show prediction results
 for comment, pred in zip(X_new, y_pred):
     print(f"Yorum: {comment} \nTahmin: {pred}\n")
-'''
+
 
 Haberleri kategorize ettirdiğim zaman çıktılar bu şekilde olmakta.
 When I categorize the news, the outputs are like this.
