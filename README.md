@@ -50,13 +50,13 @@ if __name__ == '__main__':
         "https://www.haberler.com/haberler/istanbul-da-devrim-gibi-karar-bu-3-ilceye-ozel-16623264-haberi/"
 ]
     get_data(urls)
-```python
+```
 
 
 
 
  
-
+#
 Yorumları değerlendirdiğim kodlar şu şekilde:
 The codes I used to evaluate the comments are as follows:
 
@@ -94,9 +94,9 @@ y_true = df_new['Yorum'].values
 
 for comment, pred in zip(X_new, y_pred):
     print(f"Yorum: {comment} \nTahmin: {pred}\n")
-```python
+```
 
-
+#
 Kodların çıktısı ise şu şekilde:
 When I run, the outputs are like this.
 <img width="786" alt="Ekran Resmi 2023-12-13 16 57 10" src="https://github.com/yususus/PythonAI/assets/77053475/b0db1e40-f733-49c9-81b7-7302aff0b79a">
@@ -153,7 +153,7 @@ with open('Haber2.csv', 'w', newline='', encoding='utf-8') as f:
             row_class1 = data_class1[i] if i < len(data_class1) else ''
             row_class2 = data_class2[i] if i < len(data_class2) else ''
             writer.writerow([f'{unique_name}_Haber: {row_class1}', row_class2])
-```python
+```
 
 
 
@@ -162,10 +162,7 @@ with open('Haber2.csv', 'w', newline='', encoding='utf-8') as f:
 
 
 
-
-
-
-
+#
 Kategorileri belirlediğim kodlarım şu şekilde:
 My codes where I determined the categories are as follows:
 
@@ -206,8 +203,9 @@ y_true = df_new['Yorum'].values
 // Show prediction results
 for comment, pred in zip(X_new, y_pred):
     print(f"Yorum: {comment} \nTahmin: {pred}\n")
-```python
+```
 
+#
 Haberleri kategorize ettirdiğim zaman çıktılar bu şekilde olmakta.
 When I categorize the news, the outputs are like this.
 
