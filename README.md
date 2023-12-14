@@ -1,7 +1,7 @@
 # Python Text Classification
 
 Veri çekme işlemleri Haberler.com adresinden belirli html tagleri kullanılarak çekilmiştir.
-Kodlarımda haber içeriğini ve yapılan her yorum çekiyorum.
+Kodlarımda haber içeriğini ve yapılan her yorum çekiyorum.  
 
 Data extraction was done from Haberler.com using certain HTML tags.
 In my codes, I pull the news content and every comment made.
@@ -57,7 +57,7 @@ if __name__ == '__main__':
 
  
 #
-Yorumları değerlendirdiğim kodlar şu şekilde:
+Yorumları değerlendirdiğim kodlar şu şekilde:  
 The codes I used to evaluate the comments are as follows:
 
 ```python
@@ -97,7 +97,7 @@ for comment, pred in zip(X_new, y_pred):
 ```
 
 #
-Kodların çıktısı ise şu şekilde:
+Kodların çıktısı ise şu şekilde:  
 When I run, the outputs are like this.
 <img width="786" alt="Ekran Resmi 2023-12-13 16 57 10" src="https://github.com/yususus/PythonAI/assets/77053475/b0db1e40-f733-49c9-81b7-7302aff0b79a">
 
@@ -109,7 +109,7 @@ When I run, the outputs are like this.
 
 
 # Haber Kategorizasyonu
-500'e yakın haber çekme işlemi gerçekşetirdim. Bu veriler verim setim olacak.
+500'e yakın haber çekme işlemi gerçekşetirdim. Bu veriler verim setim olacak.  
 I pulled nearly 500 news stories from the internet and completed the process. These data will be my dataset.
 
 ```python
@@ -163,7 +163,7 @@ with open('Haber2.csv', 'w', newline='', encoding='utf-8') as f:
 
 
 #
-Kategorileri belirlediğim kodlarım şu şekilde:
+Kategorileri belirlediğim kodlarım şu şekilde:  
 My codes where I determined the categories are as follows:
 
 ```python
@@ -206,7 +206,7 @@ for comment, pred in zip(X_new, y_pred):
 ```
 
 #
-Haberleri kategorize ettirdiğim zaman çıktılar bu şekilde olmakta.
+Haberleri kategorize ettirdiğim zaman çıktılar bu şekilde olmakta.  
 When I categorize the news, the outputs are like this.
 
 <img width="953" alt="Ekran Resmi 2023-12-13 16 46 02" src="https://github.com/yususus/PythonAI/assets/77053475/c289f1ff-4790-40d5-beb6-b60797c07906">
